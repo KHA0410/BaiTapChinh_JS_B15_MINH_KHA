@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập Js buổi 15</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <!-- Bài 1: Quản lý sinh viên -->
+    <div class="container w-50">
+      <h3 class="text-center">BÀI 1: QUẢN LÝ SINH VIÊN</h3>
+      <div class="input1 d-flex align-items-center">
+        <div class="form-group">
+          <label for="">Nhập vào điểm chuẩn</label>
+          <input
+            type="text"
+            class="form-control"
+            id="diemChuan"
+            placeholder="Điểm chuẩn"
+          />
+        </div>
+        <div class="mb-3 m-auto">
+          <label for="" class="form-label">Chọn khu vưc</label>
+          <select
+            class="form-select form-select-lg"
+            name="chonKhuVuc"
+            id="khuVuc"
+          >
+            <option selected>Chọn khu vực</option>
+            <option value="2">A</option>
+            <option value="1">B</option>
+            <option value="0.5">C</option>
+            <option value="0">X</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Chọn đối tượng</label>
+          <select
+            class="form-select form-select-lg"
+            name="chonDoiTuong"
+            id="doiTuong"
+          >
+            <option selected>Chọn đối tượng</option>
+            <option value="2.5">1</option>
+            <option value="1.5">2</option>
+            <option value="1">3</option>
+            <option value="0">0</option>
+          </select>
+        </div>
+      </div>
+      <div class="input2 d-flex">
+        <div class="form-group mt-3">
+          <label for="">Điểm môn thứ 1</label>
+          <input
+            type="text"
+            class="form-control"
+            id="diemThu1"
+            placeholder="Điểm môn thứ 1"
+          />
+        </div>
+        <div class="form-group mt-3 m-auto">
+          <label for="">Điểm môn thứ 2</label>
+          <input
+            type="text"
+            class="form-control"
+            id="diemThu2"
+            placeholder="Điểm môn thứ 2"
+          />
+        </div>
+        <div class="form-group mt-3">
+          <label for="">Điểm môn thứ 3</label>
+          <input
+            type="text"
+            class="form-control"
+            id="diemThu3"
+            placeholder="Điểm môn thứ 3"
+          />
+        </div>
+      </div>
+
+      <button id="ketQua" class="btn btn-primary mt-3 mb-3">Kết Quả</button>
+
+      <div id="result" class="alert alert-success"></div>
+    </div>
+
+    <h4 class="text-center mt-5">Sơ đồ 3 khối</h4>
+    <div class="sodo d-flex">
+      <div class="khoi1">
+        <ul>
+          <li>Nhập vào "điểm chuẩn"</li>
+          <li>Nhập vào tổng điểm 3 môn và không có môn nào điểm 0</li>
+          <li>
+            Điểm ưu tiên là điểm khu vực và đối tượng: <br />
+            A = 2; B = 1; C = 0.5 <br />
+            1 = 2.5; 2 = 1.5; 3 = 0.5
+          </li>
+          <li>Tính điểm tổng là điểm của 3 môn và điểm ưu tiên</li>
+        </ul>
+      </div>
+      <div class="khoi2">
+        <ul>
+          <li>
+            Khai báo và gán giá trị cho các biến: diemChuan, khuVuc, doiTuong,
+            diemThu1, diemThu2, diemThu3, sumDiem, tongDiem;
+          </li>
+          <li>
+            Nếu diemThu1 == 0 || diemThu2 == 0 || diemThu3 == 0 thì in ra "Rớt
+            vì có môn 0 điểm"
+          </li>
+          <li>
+            Ngược lại nếu không có môn bị điểm 0 thì sumDiem = diemThu1 +
+            diemThu2 + diemThu3 + khuVuc + doiTuong;
+          </li>
+        </ul>
+      </div>
+      <div class="khoi3">
+        <ul>
+          <li>
+            Nếu sumDiem >= diemChuan thì in ra kết quả "Đậu ngược lại in ra
+            "Rớt"
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Bài 2: TÍNH TIỀN ĐIỆN -->
+    <div class="container w-50">
+      <h3 class="text-center">BÀI 2: QUẢN LÝ TIỀN ĐIỆN</h3>
+      <div class="form-group">
+        <label for="">Nhập vào họ và tên</label>
+        <input
+          type="text"
+          class="form-control"
+          id="hoTen"
+          placeholder="Họ và tên"
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="">Nhập vào số kw</label>
+        <input type="text" class="form-control" id="soKw" placeholder="Số kw" />
+      </div>
+
+      <button id="ketQua2" class="btn btn-primary mt-3 mb-3">
+        Tính tiền điện
+      </button>
+
+      <div id="result2" class="alert alert-success"></div>
+    </div>
+    <h4 class="text-center mt-5">Sơ đồ 3 khối</h4>
+    <div class="sodo d-flex">
+      <div class="khoi1">
+        <ul>
+          <li>Nhập vào họ và tên, số kw</li>
+          <li>
+            50 kW đầu: 500 VNĐ/kW <br />
+            50 kW kế: 650 VNĐ/kW <br />
+            100 kW kế: 850 VNĐ/kW <br />
+            150 kW kế: 1100 VNĐ/kW <br />
+            Còn lại: 1300 VNĐ/kW
+          </li>
+        </ul>
+      </div>
+      <div class="khoi2">
+        <ul>
+          <li>Khai báo biến hoTen, soKw</li>
+          <li>
+            Xét các trường hợp: <br />
+            soKw <= 50: tienDien = 500 * soKw;
+            <br />
+            soKw <= 100: tienDien = 50 * 500 + (soKw - 50) * 650;
+            <br />
+            soKw <= 200: tienDien = 50 * 500 + 50 * 650 + (soKw - 100) * 850;
+            <br />
+            soKw <= 350: tienDien = 50 * 500 + 50 * 650 + 100 * 850 + (soKw -
+            200) * 1100;
+            <br />
+            tienDien = 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (soKw -
+            350) * 1300;
+          </li>
+        </ul>
+      </div>
+      <div class="khoi3">
+        <ul>
+          <li>In ra ho và tên, tiền điện</li>
+        </ul>
+      </div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Bài 3: TÍNH THUẾ THU NHẬP CÁ NHÂN -->
+    <div class="container w-50">
+      <h3 class="text-center">BÀI 3: TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
+      <div class="form-group mt-3">
+        <label for="">Nhập họ và tên</label>
+        <input
+          type="text"
+          class="form-control"
+          id="hoTen3"
+          placeholder="Họ và tên"
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="">Nhập vào tổng thu nhập năm </label>
+        <input
+          type="text"
+          class="form-control"
+          id="thuNhap"
+          placeholder="Tổng thu nhập năm"
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="">Nhập vào số người phụ thuộc</label>
+        <input
+          type="text"
+          class="form-control"
+          id="soNguoi"
+          placeholder="Số người phụ thuộc"
+        />
+      </div>
+      <button id="ketQua3" class="btn btn-primary mt-3 mb-3">
+        Tính tiền thuế
+      </button>
+      <div id="result3" class="alert alert-success"></div>
+    </div>
+    <h4 class="text-center mt-5">Sơ đồ 3 khối</h4>
+    <div class="sodo d-flex">
+      <div class="khoi1">
+        <ul>
+          <li>Nhập vào họ và tên</li>
+          <li>Nhập vào tổng thu nhập năm</li>
+          <li>Nhập vào số người phụ thuộc</li>
+        </ul>
+      </div>
+      <div class="khoi2">
+        <ul>
+          <li>Khai báo biến hoTen3, thuNhap, soNguoi, chiuThue, tienThue</li>
+          <li>Tính chiuThue = thuNhap - 4000000 - soNguoi * 1600000;</li>
+          <li>
+            Xét các trường hợp: <br />
+            chiuThue <= 60000000: tienThue = (chiuThue * 0.05)<br />
+            chiuThue <= 120000000: tienThue = (chiuThue* 0.1)<br />
+            chiuThue <= 210000000: tienThue = (chiuThue* 0.15)<br />
+            chiuThue <= 384000000: tienThue = (chiuThue* 0.2)<br />
+            chiuThue <= 624000000: tienThue = (chiuThue* 0.25)<br />
+            chiuThue <= 960000000: tienThue = (chiuThue* 0.3)<br />
+            chiuThue >= 960000000: tienThue = (chiuThue* 0.35)
+          </li>
+        </ul>
+      </div>
+      <div class="khoi3">
+        <ul>
+          <li>In ra ho và tên, thuế thu nhập cá nhân phải trả</li>
+        </ul>
+      </div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Bài 4: TÍNH TIỀN CÁP -->
+    <div class="container w-50">
+      <h3 class="text-center">BÀI 4: TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
+      <div class="mb-3">
+        <label for="" class="form-label"></label>
+        <select
+          class="form-select form-select-lg"
+          name=""
+          id="chonLoai"
+          onchange="chonLoaiKhach"
+        >
+          <option selected>Chọn loại khách hàng</option>
+          <option value="nhaDan">Nhà dân</option>
+          <option value="doanhNghiep">Doanh nghiệp</option>
+        </select>
+      </div>
+      <div class="form-group mt-3">
+        <label for="">Nhập mã khách hàng</label>
+        <input
+          type="text"
+          class="form-control"
+          id="khachHang"
+          placeholder="Mã khách hàng"
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="">Nhập số kênh cao cấp</label>
+        <input
+          type="text"
+          class="form-control"
+          id="soKenh"
+          placeholder="Số kênh cao cấp"
+        />
+      </div>
+      <div class="form-group mt-3" id="ketNoiInput">
+        <label for="">Nhập số kết nối</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ketNoi"
+          placeholder="Số kết nối"
+        />
+      </div>
+
+      <button id="ketQua4" class="btn btn-primary mt-3 mb-3">
+        Tính tiền cáp
+      </button>
+      <div id="result4" class="alert alert-success"></div>
+    </div>
+    <h4 class="text-center mt-5">Sơ đồ 3 khối</h4>
+    <div class="sodo d-flex">
+      <div class="khoi1">
+        <ul>
+          <li>Chọn nhà dân hoặc doanh nghiệp</li>
+          <li>Nhập vào mã khách hàng</li>
+          <li>Nhập vào số kênh cao cấp</li>
+          <li>Nhập vào số kết nối</li>
+          <li>
+            Đối với Nhà dân: <br />
+            • Phí xử lý hóa đơn: 4.5$ <br />
+            • Phí dịch vụ cơ bản: 20.5$ <br />
+            • Thuê kênh cao cấp: 7.5$ / kênh
+          </li>
+          <li>
+            Đối với Doanh nghiệp <br />
+            • Phí xử lý hóa đơn: 15$ <br />
+            • Phí dịch vụ cơ bản: 75$ cho <br />
+            tổng 10 kết nối đầu <br />
+            , mỗi kết nối thêm 5$ / kết nối <br />
+            • Thuê kênh cao cấp: 50$ / kênh
+          </li>
+          <li>
+            Nếu chọn doanh nghiệp thì có tính <br />
+            số kết nối còn nhà dân thì không
+          </li>
+        </ul>
+      </div>
+      <div class="khoi2">
+        <ul>
+          <li>
+            Khai báo biến chonLoai, ketNoiInput <br />
+            và sử dụng onchange của dropdown để xử lý ẩn hiện
+          </li>
+          <li>
+            Khai báo biến chonLoai, khachHang, soKenh, <br />
+            ketNoi, tienCa, hoaDon, dichVu, kenh
+          </li>
+          <li>tienCap = hoaDon + dichVu + kenh</li>
+          <li>Đối với nhân dân kenh = 7.5$ * sokenh</li>
+          <li>
+            Đối với doanh nghiep kenh = 50$ * sokenh <br />
+            và nếu kết nối <=10 thì dịch vụ = 75$, <br />
+            và nếu kết nối lớn hơn 10 thì tính 5$/kết nối
+          </li>
+        </ul>
+      </div>
+      <div class="khoi3">
+        <ul>
+          <li>In ra mã khách hàng, tiền cáp phải trả</li>
+        </ul>
+      </div>
+    </div>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- My JS -->
+    <script src="./index.js"></script>
+  </body>
+</html>

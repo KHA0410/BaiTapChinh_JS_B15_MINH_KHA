@@ -1,0 +1,23 @@
+.sodo{
+    margin: 0 auto;
+    width: 80%;
+}
+.khoi1{
+    border: 5px solid green;
+}
+.khoi2{
+    border: 5px solid yellow;
+    margin: 0 20px;
+  
+}
+.khoi3{
+    border: 5px solid red;
+}
+
+.khoi1,.khoi2,.khoi3{
+    border-radius: 20px;
+}
+
+.form-group label{
+    font-weight: 500;
+}
